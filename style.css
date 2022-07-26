@@ -1,15 +1,38 @@
-form {
-  display: block;
+.search {
+  background-image: url("https://harbourproject-weather.netlify.app/img/bkgrnd2.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.row {
+  height: 500px !important;
 }
 
-.search-form {
-  position: relative;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 10px;
+.one_third_split {
+  height: 30%;
 }
-.bi-search {
-  position: relative;
-  width: 8%;
+.theme_dark {
+  color: black;
+}
+.theme_light {
+  color: white;
+}
+
+.pink {
+  background-color: pink;
+}
+.purple {
+  background-color: purple;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
 }
