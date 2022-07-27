@@ -1,8 +1,8 @@
 .search {
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/793/original/rainbow.jpeg?1658852691");
+  background-image: url("https://images.pexels.com/photos/633854/autumn-orange-nature-red-633854.jpeg?cs=srgb&dl=pexels-skitterphoto-633854.jpg&fm=jpg");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  background-position: initial;
 }
 .row {
   height: 500px !important;
@@ -12,10 +12,12 @@
   height: 30%;
 }
 .theme_dark {
-  color: black;
+  color: #393e46;
+  text-align: center;
 }
 .theme_light {
-  color: white;
+  color: #393e46;
+  text-align: center;
 }
 
 .pink {
