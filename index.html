@@ -21,7 +21,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -41,6 +41,7 @@
                   class="form-control"
                   placeholder="Enter a location"
                   aria-label="Enter a location"
+                  autocomplete="off"
                 />
 
                 <button class="btn" type="button">
@@ -49,6 +50,7 @@
               </div>
             </form>
           </div>
+          
           <div class="city" id="city">
             <h1>CAPE TOWN</h1>
           </div>
@@ -64,16 +66,41 @@
             </ul>
           </div>
         </div>
-        <div
-          class="blue col-7 border border-start-0 border-secondary border-1 rounded-end"
-        ></div>
-      </div>
-      <small>
+        <div 
+          class="blue col-7 border border-start-0 border-secondary border-1 rounded-end" >
+         <div class="row" >
+          <div class="col-6">
+
+          <h1 id="city">  Today</h1>
+
+           <div class="partly-cloudy-icon">
+            <img
+              id="iconimage"
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="Cloudy icon"
+              class="weather-icon float-left"
+            />
+            <div class="col-6" >
+          <span class="temp" id="temp">14</span>
+          </div>
+           </div>
+           </div>
+    
+            <div class="col-6" >
+              <ul id="details">
+                <li>Condition: Clear sky</li>
+                <li>Wind: 18 km/h</li>
+                <li>Humidity: 52%</li>
+              </ul>
+              </div>
+              </div>
+             </div>
+          <small>
         This page was desinged by Prinisha Jugwanth and is an
         <a href="https://github.com/prinishajugwanth/Weather_project ">
           open-source code
         </a>
       </small>
-    </div>
-  </body>
+      </div>
+ </body>
 </html>
