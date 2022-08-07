@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "Monaco";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Monaco"), url("Monaco.woff") format("woff");
+}
+
+body {
+  font-family: "Monaco";
+  font-weight: normal;
+  font-size: 42px;
+}
+.weatherDisplay {
+}
+.forecastDisplay {
+}
+.search {
+  background-image: url("../resources/Clear.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: initial;
+  position: relative;
+}
+.conditions-list {
+  margin: 0 auto;
+  padding-left: 15px;
+  list-style: none;
+  font-size: 16px;
+  line-height: 29px;
+}
+.icon-today {
+  position: relative;
+  top: -20px;
+}
+.temperature {
+  font-size: 68px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-left: 60px;
+}
+.currentUnit {
+  font-size: 24px;
+  position: relative;
+  top: -30px;
+}
+.high-low {
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.condition {
+  text-align: left;
+}
+.h-custom {
+  height: 65% !important;
+}
+.verticalLine {
+  border-right: 0.9px solid rgba(182, 188, 195, 0.4);
+}
+.detailRow {
+  height: 250px !important;
+  width: 100%;
+}
+.searchbar {
+  height: 15%;
+}
+
+.theme_light {
+  color: white;
+}
+.theme_dark {
+  color: black;
+}
+.day {
+  text-align: center;
+  font-size: 28px;
+}
+.city {
+  text-align: center;
+  height: 30%;
+}
+.weekday {
+  padding: 0;
+}
+.icon-forecast {
+  text-align: center;
+}
+.week-day {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.temp-forecast {
+  font-size: 14px;
+  text-align: center;
+}
+li {
+  list-style: none;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0px;
+}
+.pink {
+  background-color: pink;
+}
+.purple {
+  background-color: purple;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+small {
+  font-family: "Monaco";
+  font-size: 13px;
+}
+
+.details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.detailsList {
+  padding-left: 0;
+}
+.detail_screen {
+  opacity: 0%;
+}
+.main_screen {
+  height: 500px;
+}

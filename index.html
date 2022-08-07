@@ -20,87 +20,123 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Edu+NSW+ACT+Foundation&family=Shadows+Into+Light&family=Source+Code+Pro:ital,wght@1,500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/site.css" />
+    <link rel="stylesheet" href="css/weather-icons.css" />
+
     <title>Weather App</title>
   </head>
   <body>
     <div class="container m-5">
       <div class="row">
         <div
-          class="red col-5 search border border-end-0 border-secondary border-1 rounded-start"
+          class="col-5 search border border-secondary border-1 theme_light main_screen"
+          id="main_screen"
         >
-          <div class="one_third_split theme_light">
+          <div class="searchbar">
             <form class="mt-3" id="search-form">
               <div class="input-group">
-                <button class="btn" type="button">
-                  <i class="fa-solid fa-location-dot"></i>
-                </button>
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Enter a location"
                   aria-label="Enter a location"
                   autocomplete="off"
+                  id="city-input"
                 />
 
-                <button class="btn" type="button">
+                <button class="btn" type="button" id="location_search">
                   <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="btn" type="button" id="location_current">
+                  <i class="fa-solid fa-location-dot"></i>
                 </button>
               </div>
             </form>
           </div>
-          
-          <div class="city" id="city">
-            <h1>CAPE TOWN</h1>
+
+          <div class="city">
+            <h6>Weather you go here or to</h6>
+            <h1 id="city">No Where</h1>
+            <ul class="detailsList">
+              <li id="longitude"></li>
+              <li id="latitude"></li>
+            </ul>
           </div>
           <div class="details">
-            <ul>
-              <li class="day" id="day">Wednesday</li>
-              <br />
-              <li id="date">
-                27 July 2022
-                <br />
-                14:25
-              </li>
+            <ul class="detailsList">
+              <li id="day">day</li>
+              <li id="date">date</li>
+              <li id="time">time</li>
             </ul>
           </div>
         </div>
-        <div 
-          class="blue col-7 border border-start-0 border-secondary border-1 rounded-end" >
-         <div class="row" >
-          <div class="col-6">
-
-          <h1 id="city">  Today</h1>
-
-           <div class="partly-cloudy-icon">
-            <img
-              id="iconimage"
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Cloudy icon"
-              class="weather-icon float-left"
-            />
-            <div class="col-6" >
-          <span class="temp" id="temp">14</span>
+        <div class="col-7 detail_screen" id="detail_screen">
+          <div class="detailRow row">
+            <div class="h-25">
+              <div class="row p-1 h-auto">
+                <div class="col mt-2"><h2>Today</h2></div>
+                <div
+                  class="col d-grid gap-2 d-md-flex justify-content-md-end me-3"
+                >
+                  <button
+                    id="buttonCel"
+                    class="btn btn-secondary h-75 mt-2"
+                    type="button"
+                  >
+                    ºC
+                  </button>
+                  <button
+                    id="buttonFar"
+                    class="btn btn-secondary h-75 mt-2"
+                    type="button"
+                  >
+                    ºF
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mx-0 p-3 h-75 weatherDisplay p-3 bg-secondary bg-opacity-10 rounded-end"
+            >
+              <div class="row">
+                <div class="col-6 verticalLine">
+                  <div class="currentWeather">
+                    <span class="temperature" id="temperature">0</span
+                    ><span class="currentUnit" id="currentUnit">ºC</span>
+                    <i id="icon" class="wi"></i>
+                  </div>
+                  <div class="high-low">
+                    <p id="highlow">Max 0ºC Min 0ºC</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <ul class="conditions-list" id="conditionsList"></ul>
+                </div>
+              </div>
+            </div>
           </div>
-           </div>
-           </div>
-    
-            <div class="col-6" >
-              <ul id="details">
-                <li>Condition: Clear sky</li>
-                <li>Wind: 18 km/h</li>
-                <li>Humidity: 52%</li>
-              </ul>
-              </div>
-              </div>
-             </div>
-          <small>
-        This page was desinged by Prinisha Jugwanth and is an
-        <a href="https://github.com/prinishajugwanth/Weather_project ">
-          open-source code
-        </a>
-      </small>
+          <div class="detailRow row">
+            <div class="h-25 mx-2 p-3"><h2>Forecast</h2></div>
+            <div
+              class="mx-0 mb-3 p-4 h-custom forecastDisplay p-3 bg-secondary bg-opacity-10 rounded-end"
+            >
+              <div class="row week" id="forecastDiv"></div>
+            </div>
+          </div>
+        </div>
+
+        <small>
+          This page was desinged by Prinisha Jugwanth and is an
+          <a href="https://github.com/prinishajugwanth/Weather_project ">
+            open-source code
+          </a>
+        </small>
       </div>
- </body>
+    </div>
+    <script src="controllers/apiController.js"></script>
+    <script src="controllers/locationController.js"></script>
+    <script src="controllers/timeController.js"></script>
+    <script src="controllers/temperatureController.js"></script>
+  </body>
 </html>
